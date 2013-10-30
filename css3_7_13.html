@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>CSS3</title>
+	<script type="text/javascript" src="js/vendor/modernizr.custom.06552.js"></script>
+	<script type="text/javascript">
+	var buttonArray = ["button1","button2"];
+	window.onload = function(){
+		createListeners();
+		console.log(Modernizr.audio);
+		console.log(navigator.userAgent);
+	};
+	function createListeners(){
+		for (var i=0; i<buttonArray.length; i++){
+			//console.log(i);
+			var button = document.getElementById(buttonArray[i] );
+			button.onclick = function(event){
+				
+				console.log(this.id+" Click")
+				var el = document.getElementById(this.id);
+			    var left =  300;
+			    var top =  200;
+			    var rotationVar = "60deg";
+			    var background = "#000000";
+			    el.setAttribute("style","left: " + left + "px; top: " + top + "px;"+"background-color:"+background);
+				
+				};
+		}
+		// var button1 = document.getElementById("button1");
+		// button1.onclick = function(event){console.log(this.id+" Click")};
+	};
+		
+	</script>
+	<style type="text/css">
+		#button1{position:relative; text-align: center; font-weight:bold; width:100px; height:50px; color:red; background-color:gray;
+			transform: rotate 300ms;
+			-ms-transform: rotate 300ms;
+			-webkit-transform: rotate 300ms;
+	
+			-webkit-transition: top 300ms ease-in 100ms, left 200ms ease-in 50ms, background-color 200ms ease-in 50ms;
+			-moz-transition: top 300ms ease-in 100ms, left 200ms ease-in 50ms, background-color 200ms ease-in 50ms;
+			-o-transition: top 300ms ease-in 100ms, left 200ms ease-in 50ms, background-color 200ms ease-in 50ms;
+			transition: top 300ms ease-in 100ms, left 200ms ease-in 50ms, background-color 200ms ease-in 50ms;
+		
+		}
+		#button2{position:relative; text-align: center; font-weight:bold; width:100px; height:50px; color:red; background-color:gray;
+			-webkit-transition: top 300ms ease-in 100ms, left 200ms ease-in 50ms, background-color 200ms ease-in 50ms;
+			-moz-transition: top 300ms ease-in 100ms, left 200ms ease-in 50ms, background-color 200ms ease-in 50ms;
+			-o-transition: top 300ms ease-in 100ms, left 200ms ease-in 50ms, background-color 200ms ease-in 50ms;
+			transition: top 300ms ease-in 100ms, left 200ms ease-in 50ms, background-color 200ms ease-in 50ms;
+			}
+		/* Simulated box shadow using borders: */
+		.box {
+		   border-bottom: 1px solid #666;
+		   border-right: 1px solid #777;
+		}
+		.boxshadow div.box {
+		   border: none;
+		   -webkit-box-shadow: #666 1px 1px 1px;
+		      -moz-box-shadow: #666 1px 1px 1px;
+		               box-shadow: #666 1px 1px 1px;
+		}
+		
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="button1" class="box">Click Me</div><br />
+		<div id="button2" class="box">Click Me 2</div>
+	</div>
+	
+</body>
+
+<script>
+	// Modernizr.load([
+	  // {
+	    // load: '//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.js',
+	    // complete: function () {
+	      // if ( !window.jQuery ) {
+	            // Modernizr.load('js/vendor/jquery-1.8.0.min.js');
+	      // }
+	    // }
+	  // },
+	  // {
+	    // // This will wait for the fallback to load and
+	    // // execute if it needs to.
+	    // load: 'js/modernizr-latest.js'
+	  // }
+	// ]);
+</script>
+
+</html>
